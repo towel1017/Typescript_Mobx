@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router';
 
 interface Props {
       id : number,
@@ -9,8 +10,9 @@ interface Props {
 
 const QuestionItem = (props: Props) => {
       const { id, title ,al_date, status} = props;
+      const history = useHistory();
       return (
-            <div>
+            <div onClick={() => {history.push(`/Details/${id}`)}}>
                   <span>{id}</span>
                   <span>{title}</span>
                   <span>{al_date}</span>
